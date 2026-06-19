@@ -12,7 +12,7 @@ class Program
         //  IMPORTANT - If you get the following error: "No more virtual tiles can be allocated", make sure to run Visual Studio as a Admin
 
         //  Initialization only needs to be done once at the appropriate place in your code
-        IPsApplication app = PsConnection.StartAndConnect(EPsVersion.CC2024);
+        IPsApplication app = PsConnection.StartAndConnect("2024");
         //  Or
         //IPsApplication app = PsConnection.StartAndConnect();  // Will start the highest version installed
 

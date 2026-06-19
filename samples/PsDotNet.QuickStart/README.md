@@ -6,7 +6,7 @@ A minimal sample showing how to use the [PsDotNet](https://www.nuget.org/package
 
 - Windows
 - .NET 8 SDK
-- Adobe Photoshop installed (CS3 or newer)
+- Adobe Photoshop installed (CS6 or newer)
 
 ## Run
 
@@ -18,7 +18,7 @@ The sample creates a 512×512 RGB document, applies several filter effects to a 
 
 ## What it shows
 
-- Connecting to a specific Photoshop version (`PsConnection.StartAndConnect(EPsVersion.CC2024)`)
+- Connecting to a specific Photoshop version (`PsConnection.StartAndConnect("2024")`)
 - Creating documents and layers
 - Applying filters (Clouds, Twirl, Chalk and Charcoal, Accented Edges)
 - Working with text layers, fonts, and color
