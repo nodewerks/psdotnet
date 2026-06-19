@@ -36,7 +36,7 @@ Download the latest from the [**Releases**](https://github.com/nodewerks/psdotne
 
 ## Supported Photoshop versions
 
-CS3 through CC2025.
+CS6 through CC2026.
 
 ## Requirements
 
