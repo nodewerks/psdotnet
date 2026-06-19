@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Customers consume PsDotNet via NuGet.
+      Replace VERSION with the latest from https://www.nuget.org/packages/PsDotNet
+    -->
+    <PackageReference Include="PsDotNet" Version="2.1.*" />
+  </ItemGroup>
+
+</Project>
