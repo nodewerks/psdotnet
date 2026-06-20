@@ -1,7 +1,7 @@
-﻿using System.Drawing;
-using PsDotNet.Colors;
+﻿using PsDotNet.Colors;
 using PsDotNet.LayerStyles;
 using PsDotNet.Options.Save;
+using System.Drawing;
 
 namespace PsDotNet.QuickStart;
 
@@ -12,7 +12,7 @@ class Program
         //  IMPORTANT - If you get the following error: "No more virtual tiles can be allocated", make sure to run Visual Studio as a Admin
 
         //  Initialization only needs to be done once at the appropriate place in your code
-        IPsApplication app = PsConnection.StartAndConnect("2024");
+        IPsApplication app = PsConnection.StartAndConnect("2025");
         //  Or
         //IPsApplication app = PsConnection.StartAndConnect();  // Will start the highest version installed
 

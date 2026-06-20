@@ -1,0 +1,90 @@
+<Window x:Class="PsDotNet.Kevlar.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PsDotNet.Kevlar Demo"
+        Height="400"
+        Width="500"
+        Background="Gray">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left column: connect/disconnect buttons -->
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0">
+            <Button Height="50"
+                    Content="Connect"
+                    Click="ConnectButton_Click"
+                    IsEnabled="{Binding CanConnect}" />
+            <Button Height="30"
+                    Content="Disconnect"
+                    Click="DisconnectButton_Click"
+                    IsEnabled="{Binding IsConnected}" />
+            <Button Height="30"
+                    Content="Get Thumbnail"
+                    Click="GetThumbnailButton_Click"
+                    IsEnabled="{Binding IsConnected}" />
+        </StackPanel>
+
+        <!-- Right column: FG/BG color swatches -->
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1">
+            <Label Content="Foreground Color" />
+            <Rectangle Height="50"
+                       Width="50"
+                       Fill="{Binding ForegroundColor}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1">
+            <Label Content="Background Color" />
+            <Rectangle Height="50"
+                       Width="50"
+                       Fill="{Binding BackgroundColor}" />
+        </StackPanel>
+
+        <!-- Active tool -->
+        <StackPanel Grid.Row="2"
+                    Grid.Column="1"
+                    Orientation="Vertical">
+            <Label Content="Active Tool" />
+            <TextBox Text="{Binding CurrentTool}"
+                     VerticalAlignment="Center"
+                     IsReadOnly="True" />
+        </StackPanel>
+
+        <!-- Thumbnail -->
+        <StackPanel Grid.Row="3"
+                    Grid.Column="0"
+                    Orientation="Vertical">
+            <Label Content="Document Thumbnail" />
+            <Image Source="{Binding ThumbnailSource}"
+                   Width="200"
+                   Height="200"
+                   Stretch="Uniform" />
+        </StackPanel>
+
+        <!-- Status / notifications log -->
+        <TextBox Grid.Row="4"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding StatusText}"
+                 IsReadOnly="True"
+                 VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                 Margin="0,5,0,0" />
+    </Grid>
+</Window>
