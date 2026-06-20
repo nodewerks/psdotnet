@@ -91,9 +91,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (_conn is not null)
             return;
 
-        const string host     = "127.0.0.1";
-        const int    port     = 49494;
-        const string password = "Swordfish";
+        const int port = 49494;
+        string host = string.IsNullOrWhiteSpace(HostInput.Text) ? "127.0.0.1" : HostInput.Text.Trim();
+        string password = PasswordInput.Password;
+
+        if (string.IsNullOrEmpty(password))
+        {
+            AppendStatus("Enter the Photoshop Remote Connection password first " +
+                         "(Photoshop ▸ Edit ▸ Remote Connection).");
+            return;
+        }
 
         AppendStatus($"Connecting to {host}:{port} …");
 
@@ -185,6 +192,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             AppendStatus($"GetThumbnail failed: {ex.Message}");
         }
     }
+
+    /// <summary>Keeps the activity log pinned to the newest line.</summary>
+    private void LogBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        => LogBox.ScrollToEnd();
 
     // -------------------------------------------------------------------------
     // NotificationReceived handler
