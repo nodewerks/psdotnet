@@ -8,6 +8,10 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PsDotNet.Kevlar\PsDotNet.Kevlar.csproj" />
+    <!--
+      Customers consume PsDotNet.Kevlar via NuGet.
+      Replace VERSION with the latest from https://www.nuget.org/packages/PsDotNet.Kevlar
+    -->
+    <PackageReference Include="PsDotNet.Kevlar" Version="2.4.*" />
   </ItemGroup>
 </Project>
